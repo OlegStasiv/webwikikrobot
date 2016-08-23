@@ -49,8 +49,7 @@ try:
            desired_capabilities={
                "browserName": "firefox",
                "version": "45",
-               "platform": "VISTA",
-               "video": "True"
+               "platform": "VISTA"
            })
 
        driver.implicitly_wait(30)
