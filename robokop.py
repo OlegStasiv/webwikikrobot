@@ -42,9 +42,8 @@ test3filehandle.close()
 try:
     if os.stat('some_output_file.txt').st_size > 0:
        print "All good"
-       driver = webdriver.Remote("http://localhost:4444/wd/hub", desired_capabilities = {
-        'browserName': 'chrome',
-    })
+       options = webdriver.ChromeOptions()
+       driver = webdriver.Remote("http://localhost:4444/wd/hub", desired_capabilities=options.to_capabilities())
 
        driver = webdriver.Firefox()
        driver.get("https://uk.wikipedia.org/wiki/ThinkMobiles")
