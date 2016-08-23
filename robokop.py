@@ -42,8 +42,9 @@ test3filehandle.close()
 try:
     if os.stat('some_output_file.txt').st_size > 0:
         print "All good"
-
-        driver = webdriver.Chrome()
+        chromedriver = "chromedriver"
+        os.environ["webdriver.chrome.driver"] = chromedriver
+        driver = webdriver.Chrome(chromedriver)
         driver.get("https://uk.wikipedia.org/wiki/ThinkMobiles")
         assert "ThinkMobiles — Вікіпедія" in driver.title
         # elem = driver.find_element_by_name("q")
