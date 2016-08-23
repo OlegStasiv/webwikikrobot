@@ -1,3 +1,4 @@
+# coding=utf-8
 import logging
 import os
 
@@ -42,11 +43,11 @@ try:
        print "All good"
        driver = webdriver.Firefox()
        driver.get("https://uk.wikipedia.org/wiki/ThinkMobiles")
-       assert "Python" in driver.title
-       elem = driver.find_element_by_name("q")
-       elem.send_keys("pycon")
-       elem.send_keys(Keys.RETURN)
-       assert "No results found." not in driver.page_source
+       assert "ThinkMobiles — Вікіпедія" in driver.title
+       # elem = driver.find_element_by_name("q")
+       # elem.send_keys("pycon")
+       # elem.send_keys(Keys.RETURN)
+       # assert "No results found." not in driver.page_source
        driver.close()
     else:
        print "empty file"
