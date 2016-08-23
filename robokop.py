@@ -42,7 +42,7 @@ test3filehandle.close()
 try:
     if os.stat('some_output_file.txt').st_size > 0:
         print "All good"
-        display = Display(visible=0, size=(800, 600))
+        display = Display(visible=1, size=(800, 600))
         display.start()
         # chromedriver = "/home/lego/Downloads/Botter-master/chromedriver"
         # os.environ["webdriver.chrome.driver"] = chromedriver
