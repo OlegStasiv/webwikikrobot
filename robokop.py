@@ -1,7 +1,7 @@
 # coding=utf-8
 import logging
 import os
-
+from pyvirtualdisplay import Display
 import urllib3
 
 from selenium import webdriver
@@ -42,6 +42,8 @@ test3filehandle.close()
 try:
     if os.stat('some_output_file.txt').st_size > 0:
         print "All good"
+        display = Display(visible=0, size=(800, 600))
+        display.start()
         chromedriver = "/home/lego/Downloads/Botter-master/chromedriver"
         os.environ["webdriver.chrome.driver"] = chromedriver
         driver = webdriver.Chrome(chromedriver)
