@@ -44,9 +44,16 @@ try:
     if os.stat('some_output_file.txt').st_size > 0:
        print "All good"
 
-       # driver = webdriver.Remote(
-       #     desired_capabilities=webdriver.DesiredCapabilities.CHROME,
-       #     command_executor='http://localhost:4444/wd/hub')
+       driver = webdriver.Remote(
+           command_executor='http://localhost:4444/wd/hub',
+           desired_capabilities={
+               "browserName": "firefox",
+               "version": "45",
+               "platform": "VISTA",
+               "video": "True"
+           })
+
+       driver.implicitly_wait(30)
 
 
        #driver = webdriver.Remote("http://localhost:4444/wd/hub", desired_capabilities=options.to_capabilities())
