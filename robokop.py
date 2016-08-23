@@ -5,6 +5,7 @@ import os
 import urllib3
 
 from selenium import webdriver
+from selenium.webdriver import DesiredCapabilities
 from selenium.webdriver.common.keys import Keys
 
 from wikiapi import WikiApi
@@ -41,6 +42,9 @@ test3filehandle.close()
 try:
     if os.stat('some_output_file.txt').st_size > 0:
        print "All good"
+       driver = webdriver.Remote(
+           command_executor='http://localhost:4444/wd/hub',
+           desired_capabilities=DesiredCapabilities.CHROME)
        driver = webdriver.Firefox()
        driver.get("https://uk.wikipedia.org/wiki/ThinkMobiles")
        assert "ThinkMobiles — Вікіпедія" in driver.title
