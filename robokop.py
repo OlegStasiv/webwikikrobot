@@ -48,8 +48,7 @@ try:
            command_executor='http://localhost:4444/wd/hub',
            desired_capabilities={
                "browserName": "firefox",
-               "version": "45",
-               "platform": "VISTA"
+               "version": "45"
            })
 
        driver.implicitly_wait(30)
