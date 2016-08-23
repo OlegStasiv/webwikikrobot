@@ -44,9 +44,9 @@ try:
         print "All good"
         display = Display(visible=0, size=(800, 600))
         display.start()
-        chromedriver = "/home/lego/Downloads/Botter-master/chromedriver"
-        os.environ["webdriver.chrome.driver"] = chromedriver
-        driver = webdriver.Chrome(chromedriver)
+        # chromedriver = "/home/lego/Downloads/Botter-master/chromedriver"
+        # os.environ["webdriver.chrome.driver"] = chromedriver
+        driver = webdriver.Chrome()
         driver.get("https://uk.wikipedia.org/wiki/ThinkMobiles")
         assert "ThinkMobiles — Вікіпедія" in driver.title
         # elem = driver.find_element_by_name("q")
