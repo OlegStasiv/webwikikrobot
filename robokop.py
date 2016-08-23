@@ -1,10 +1,13 @@
 import logging
 import os
+
+import urllib3
+
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
 from wikiapi import WikiApi
-import urllib3
+
 
 urllib3.disable_warnings()
 logging.captureWarnings(True)
@@ -13,7 +16,7 @@ wiki = WikiApi()
 wiki = WikiApi({ 'locale' : 'uk'})
 results = wiki.find('ThinkMObiles')
 article = wiki.get_article(results[0])
-article.summary
+# article.summary
 text_file = open("New.txt", "w")
 text_file.write((article.content).encode('utf-8'))
 text_file.close()
