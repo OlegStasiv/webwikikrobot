@@ -42,7 +42,7 @@ test3filehandle.close()
 try:
     if os.stat('some_output_file.txt').st_size > 0:
         print "All good"
-        chromedriver = "chromedriver"
+        chromedriver = "/home/lego/Downloads/Botter-master/chromedriver"
         os.environ["webdriver.chrome.driver"] = chromedriver
         driver = webdriver.Chrome(chromedriver)
         driver.get("https://uk.wikipedia.org/wiki/ThinkMobiles")
