@@ -23,8 +23,6 @@ text_file = open("New.txt", "w")
 text_file.write((article.content).encode('utf-8'))
 text_file.close()
 
-# print article.content
-
 test1filehandle = open('Old.txt', 'r')
 test2filehandle = open('New.txt', 'r')
 test3filehandle = open('some_output_file.txt', 'w')
