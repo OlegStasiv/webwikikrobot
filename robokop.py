@@ -47,11 +47,10 @@ try:
         # chromedriver = "/home/lego/Downloads/Botter-master/chromedriver"
         # os.environ["webdriver.chrome.driver"] = chromedriver
         driver = webdriver.Chrome()
+        mytitle = "ThinkMobiles — Вікіпедія"
         a = driver.get("https://uk.wikipedia.org/wiki/ThinkMobiles")
         content =  driver.title
-        print content
-        #content = content.replace(u'\xa0', u'')
-        assert "ThinkMobiles — Вікіпедія" in str(content.encode("utf-8"))
+        assert mytitle in content.encode("utf-8")
         # elem = driver.find_element_by_name("q")
         # elem.send_keys("pycon")
         # elem.send_keys(Keys.RETURN)
