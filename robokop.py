@@ -47,8 +47,9 @@ try:
         # chromedriver = "/home/lego/Downloads/Botter-master/chromedriver"
         # os.environ["webdriver.chrome.driver"] = chromedriver
         driver = webdriver.Chrome()
-        driver.get("https://uk.wikipedia.org/wiki/ThinkMobiles")
-        assert "ThinkMobiles — Вікіпедія" in (driver.title).decode('utf-8')
+        a = driver.get("https://uk.wikipedia.org/wiki/ThinkMobiles")
+        content = a.decode('utf-8')
+        assert "ThinkMobiles — Вікіпедія" in content
         # elem = driver.find_element_by_name("q")
         # elem.send_keys("pycon")
         # elem.send_keys(Keys.RETURN)
