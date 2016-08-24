@@ -50,13 +50,14 @@ try:
         a = driver.get("https://uk.wikipedia.org/wiki/ThinkMobiles")
         content =  driver.title
         print content
-        assert "ThinkMobiles — Вікіпедія" in content.encode("utf-8")
+        #content = content.replace(u'\xa0', u'')
+        assert "ThinkMobiles — Вікіпедія" in str(content.encode("utf-8"))
         # elem = driver.find_element_by_name("q")
         # elem.send_keys("pycon")
         # elem.send_keys(Keys.RETURN)
         # assert "No results found." not in driver.page_source
         driver.close()
-        #display.stop()
+        display.stop()
     else:
         print "empty file"
 except OSError:
