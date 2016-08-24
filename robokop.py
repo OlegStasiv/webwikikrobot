@@ -49,7 +49,8 @@ try:
         driver = webdriver.Chrome()
         a = driver.get("https://uk.wikipedia.org/wiki/ThinkMobiles")
         content =  driver.title
-        assert "ThinkMobiles — Вікіпедія" in content
+        print content
+        assert "ThinkMobiles — Вікіпедія" in unicode(content, 'utf-8')
         # elem = driver.find_element_by_name("q")
         # elem.send_keys("pycon")
         # elem.send_keys(Keys.RETURN)
