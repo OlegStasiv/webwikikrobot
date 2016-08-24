@@ -48,13 +48,14 @@ try:
         # os.environ["webdriver.chrome.driver"] = chromedriver
         driver = webdriver.Chrome()
         a = driver.get("https://uk.wikipedia.org/wiki/ThinkMobiles")
-        content = a.decode('utf-8')
+        content =  driver.title
         assert "ThinkMobiles — Вікіпедія" in content
         # elem = driver.find_element_by_name("q")
         # elem.send_keys("pycon")
         # elem.send_keys(Keys.RETURN)
         # assert "No results found." not in driver.page_source
         driver.close()
+        #display.stop()
     else:
         print "empty file"
 except OSError:
